@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.create(user_params)
+    @user = User.create(user_params)
+    return redirect_to(controller: 'sessions', action: 'new')
   end
 
   private
