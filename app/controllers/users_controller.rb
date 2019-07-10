@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    return redirect_to(controller: 'sessions', action: 'new')
+    return redirect_to(controller: 'sessions', action: 'new') unless @user.save
   end
 
   private
